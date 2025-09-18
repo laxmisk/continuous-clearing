@@ -136,7 +136,7 @@ namespace LCT.PackageIdentifier
             string[] files = Directory.GetFiles(outputFolderPath);
 
             bool fileExists = files.Length > 0 && files.Any(file => Path.GetFileName(file).Equals(bomFileName, StringComparison.OrdinalIgnoreCase));
-            if (fileExists && appSettings.MultipleProjectType)
+            if (fileExists)
             {
                 string existingFilePath = files.FirstOrDefault(file => Path.GetFileName(file).Equals(bomFileName, StringComparison.OrdinalIgnoreCase));
                 listOfComponentsToBom = fileOperations.CombineComponentsFromExistingBOM(listOfComponentsToBom, existingFilePath);
