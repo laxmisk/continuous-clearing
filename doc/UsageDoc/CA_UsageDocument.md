@@ -70,8 +70,7 @@ Welcome to the Continuous Clearing Tool, your automated solution for streamlinin
 - **Error Reduction**: Minimizes the risk of manual errors while creating components and identifying the correct version of source codes from public repositories.
 - **Harmonized Component Creation**: Streamlines and harmonizes the creation of third-party components by automatically filling in necessary information in SW360.
 
-## Usage
-Simply integrate the Continuous Clearing Tool into your project workflow to experience seamless clearing processes and enhanced productivity.
+
 
 # Continuous Clearing Tool workflow diagram
 * Package Identifier
