@@ -92,12 +92,7 @@ namespace ArtifactoryUploader
             JfrogRepoUpdater.JFrogService = GetJfrogService(appSettings);
             await PackageUploader.UploadPackageToArtifactory(appSettings);
 
-            // Initialize telemetry with CATool version and instrumentation key only if Telemetry is enabled in appsettings
-            if (appSettings.Telemetry.Enable)
-            {
-                TelemetryHelper telemetryHelper = new TelemetryHelper(appSettings);
-                telemetryHelper.StartTelemetry(caToolInformation.CatoolVersion, PackageUploader.uploaderKpiData, TelemetryConstant.ArtifactoryUploaderKpiData);
-            }
+        
             Logger.Logger.Log(null, Level.Notice, $"End of Artifactory Uploader execution : {DateTime.Now}\n", null);
             // publish logs and BOM file to pipeline artifact
 

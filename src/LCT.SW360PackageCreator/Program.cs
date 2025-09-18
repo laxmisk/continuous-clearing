@@ -99,12 +99,6 @@ namespace LCT.SW360PackageCreator
                     await CreatorValidator.TriggerFossologyValidation(appSettings, sW360ApicommunicationFacade, environmentHelper);
             }
             await InitiatePackageCreatorProcess(appSettings, sw360ProjectService, sW360ApicommunicationFacade);
-            // Initialize telemetry with CATool version and instrumentation key only if Telemetry is enabled in appsettings
-            if (appSettings.Telemetry.Enable)
-            {
-                TelemetryHelper telemetryHelper = new TelemetryHelper(appSettings);
-                telemetryHelper.StartTelemetry(caToolInformation.CatoolVersion, ComponentCreator.KpiData, TelemetryConstant.CreatorKpiData);
-            }
             Logger.Logger.Log(null, Level.Notice, $"End of Package Creator execution: {DateTime.Now}\n", null);
 
             // publish logs and bom file to pipeline artifact
